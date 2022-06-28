@@ -1,0 +1,330 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 18608,
+      "max": [
+        1.1576999425888062,
+        1.512436032295227,
+        1.6168789863586426
+      ],
+      "min": [
+        -1.0180100202560425,
+        -1.0369600057601929,
+        -2.2402310371398926
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 223296,
+      "componentType": 5126,
+      "count": 18608,
+      "max": [
+        0.999969482421875,
+        0.9210451245307922,
+        0.9684386849403381
+      ],
+      "min": [
+        -0.9999755620956421,
+        -0.9999886751174927,
+        -0.9999778270721436
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 18608,
+      "max": [
+        0.9051638245582581,
+        0.9877611398696899,
+        0.9999821186065674,
+        1.0
+      ],
+      "min": [
+        -0.9724462628364563,
+        -0.9999825358390808,
+        -0.9999931454658508,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 18608,
+      "max": [
+        0.9936929941177368,
+        0.9997559785842896
+      ],
+      "min": [
+        0.00024399999529123306,
+        0.00024399999529123306
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 106347,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 446592,
+      "componentType": 5126,
+      "count": 509,
+      "max": [
+        1.069769024848938,
+        1.512436032295227,
+        1.6168789863586426
+      ],
+      "min": [
+        -0.8242470026016235,
+        -0.5837590098381042,
+        -2.2402310371398926
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 452700,
+      "componentType": 5126,
+      "count": 509,
+      "max": [
+        0.0004999793600291014,
+        0.9205196499824524,
+        0.9479607939720154
+      ],
+      "min": [
+        -0.01500032003968954,
+        0.31838682293891907,
+        -0.39040833711624146
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 148864,
+      "componentType": 5126,
+      "count": 509,
+      "max": [
+        0.0,
+        0.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 425388,
+      "componentType": 5125,
+      "count": 1515,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Arqueomodel3D (https://sketchfab.com/juanbrualla)",
+      "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+      "source": "https://sketchfab.com/3d-models/head-of-a-bearded-man-british-museum-2020-5cb2a6cbf6294979bf58eca491441c9e",
+      "title": "HEAD OF A BEARDED MAN - BRITISH MUSEUM 2020"
+    },
+    "generator": "Sketchfab-12.67.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 431448,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 152936,
+      "byteOffset": 431448,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 458808,
+      "byteOffset": 584384,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 297728,
+      "byteOffset": 1043192,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1340920,
+      "uri": "marble_head.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Default_OBJ_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Default_OBJ_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Default_OBJ_normal.jpeg"
+    }
+  ],
+  "materials": [
+    {
+      "name": "Default_OBJ",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.11483284105404298,
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.8063508326896291
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material.001",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.13163126575231088,
+          0.07301812458004782,
+          0.07301812458004782,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8063508326896291
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7
+          },
+          "indices": 8,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.7329157590866089,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.043860847054026646,
+        -0.7316021893048301,
+        0.0,
+        0.0,
+        0.7316021893048301,
+        0.043860847054026646,
+        0.0,
+        0.0,
+        4.336703777313233,
+        -3.563381910324096,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        3
+      ],
+      "name": "HEAD_FINAL.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_3"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
