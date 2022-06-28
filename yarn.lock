@@ -1240,6 +1240,15 @@
     suspend-react "^0.0.8"
     zustand "^3.7.1"
 
+"@react-three/postprocessing@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@react-three/postprocessing/-/postprocessing-2.3.3.tgz#002afec5ba9852f68be56f028e515b50bcf38aa4"
+  integrity sha512-XgS0TbMafw7oPqkR5fHD9pZ1f5f/qHePdmyOhHdaZ2uTz1XpbFqZAhc7JNYTBN7SiM+xDIZVvX7/202QM9I4zw==
+  dependencies:
+    postprocessing "^6.26.4"
+    react-merge-refs "^1.1.0"
+    three-stdlib "^2.8.11"
+
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
   resolved "https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz#80de384edfbd7bfc9101164910f86078151a3eca"
@@ -4237,6 +4246,11 @@ postcss@^8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+postprocessing@^6.26.4:
+  version "6.28.1"
+  resolved "https://registry.yarnpkg.com/postprocessing/-/postprocessing-6.28.1.tgz#b201e6d9c9e1e2af4213a3b81af57ec599f5ed8d"
+  integrity sha512-3KwA5k9IwdB0bpyJ/jK1KnXAk1BJYV1jnywGXJnQXg5trSNVRUq0Gkas2GDIpo+6ThCbwb20NmF6WQOaeyk1Og==
+
 potpack@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/potpack/-/potpack-1.0.2.tgz#23b99e64eb74f5741ffe7656b5b5c4ddce8dfc14"
@@ -5107,7 +5121,7 @@ three-mesh-bvh@^0.5.10:
   resolved "https://registry.npmjs.org/three-mesh-bvh/-/three-mesh-bvh-0.5.11.tgz#6c64f80557c00d3d2bb85667444787449ae352cb"
   integrity sha512-blVHefpW+aRqB7XZcL8MEJrVwGoX9COqCgGccgzhLoPwLEdIWz4bs2FGdLECIpAEHHThL6nQodQ2S8WAs/H3CA==
 
-three-stdlib@^2.10.2, three-stdlib@^2.12.1:
+three-stdlib@^2.10.2, three-stdlib@^2.12.1, three-stdlib@^2.8.11:
   version "2.12.1"
   resolved "https://registry.npmjs.org/three-stdlib/-/three-stdlib-2.12.1.tgz#b63de05cf7f7803e630a7c0c5887e85ae06178ca"
   integrity sha512-G3SSsCOBiWa0sjjPt+K28ikQ84Plm/ZVUozMfWagK59kZqBWcaPVXpOThkAgvdBpm2zCWLW3edAoW/4XIbljVQ==

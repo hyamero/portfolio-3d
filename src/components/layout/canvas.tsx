@@ -10,7 +10,7 @@ const LControl = () => {
   useEffect(() => {
     if (control.current) {
       const domElement = dom.current
-      const originalTouchAction = domElement.style['touch-action'] 
+      const originalTouchAction = domElement.style['touch-action']
       domElement.style['touch-action'] = 'none'
 
       return () => {
@@ -26,14 +26,14 @@ const LCanvas = ({ children }) => {
 
   return (
     <Canvas
-      mode='concurrent'
+      // mode='concurrent'
       style={{
         position: 'absolute',
         top: 0,
       }}
       onCreated={(state) => state.events.connect(dom.current)}
     >
-      <LControl />
+      {/* <LControl /> */}
       <Preload all />
       {children}
     </Canvas>
