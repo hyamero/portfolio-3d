@@ -6,11 +6,7 @@ const Model = dynamic(() => import('@/components/canvas/Model'), {
 })
 
 const Page = (props) => {
-  return (
-    <>
-      <Heading />
-    </>
-  )
+  return <>{/* <Heading /> */}</>
 }
 
 Page.r3f = (props) => (

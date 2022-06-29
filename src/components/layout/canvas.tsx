@@ -32,6 +32,8 @@ const LCanvas = ({ children }) => {
         top: 0,
       }}
       onCreated={(state) => state.events.connect(dom.current)}
+      shadows
+      camera={{ position: [0, 1.5, 14], fov: 50 }}
     >
       {/* <LControl /> */}
       <Preload all />
