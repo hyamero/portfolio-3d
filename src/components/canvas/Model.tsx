@@ -1,6 +1,12 @@
 import useStore from '@/helpers/store'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import {
+  Bloom,
+  EffectComposer,
+  Noise,
+  Vignette,
+} from '@react-three/postprocessing'
 import { useRef } from 'react'
 import * as THREE from 'three'
 import { Vector3 } from 'three'
@@ -24,6 +30,16 @@ const ModelComponent = ({}) => {
         position={[0, -6, 0]}
         rotation={[0, -0.2, 0]}
       />
+      <EffectComposer multisampling={0} disableNormalPass={true}>
+        <Bloom
+          luminanceThreshold={0}
+          luminanceSmoothing={0.9}
+          height={300}
+          opacity={3}
+        />
+        <Noise opacity={0.025} />
+        <Vignette eskil={false} offset={0.1} darkness={1.1} />
+      </EffectComposer>
       {/* <Zoom /> */}
     </>
   )
@@ -58,7 +74,7 @@ function Model(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group
-        position={[1, 6, -8]}
+        position={[-0.5, 6, -8]}
         rotation={[-1.51, 0, Math.PI * 1.8]}
         scale={3.5}
       >
