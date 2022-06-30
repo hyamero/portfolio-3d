@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload } from '@react-three/drei'
+import { OrbitControls, Preload, Stats } from '@react-three/drei'
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
 
@@ -38,6 +38,7 @@ const LCanvas = ({ children }) => {
       {/* <LControl /> */}
       <Preload all />
       {children}
+      <Stats />
     </Canvas>
   )
 }

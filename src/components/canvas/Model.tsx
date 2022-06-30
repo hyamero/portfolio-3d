@@ -1,6 +1,6 @@
 import useStore from '@/helpers/store'
-import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { Effects, Sparkles, useGLTF } from '@react-three/drei'
+import { extend, useFrame } from '@react-three/fiber'
 import {
   Bloom,
   EffectComposer,
@@ -30,6 +30,7 @@ const ModelComponent = ({}) => {
         position={[0, -6, 0]}
         rotation={[0, -0.2, 0]}
       />
+      <Sparkles count={50} scale={[20, 20, 10]} size={1} speed={2} />
       <EffectComposer multisampling={0} disableNormalPass={true}>
         <Bloom
           luminanceThreshold={0}
@@ -106,12 +107,12 @@ function Lights() {
     front.current.position.x = THREE.MathUtils.lerp(
       front.current.position.x,
       pointer.x * -12,
-      0.05
+      0.08
     )
     front.current.position.y = THREE.MathUtils.lerp(
       front.current.position.y,
       6 + pointer.y * -4,
-      0.05
+      0.08
     )
   })
   return (
