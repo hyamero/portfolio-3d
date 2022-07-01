@@ -1,6 +1,6 @@
 import useStore from '@/helpers/store'
-import { Effects, Sparkles, useGLTF } from '@react-three/drei'
-import { extend, useFrame } from '@react-three/fiber'
+import { Sparkles, useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 import {
   Bloom,
   EffectComposer,
@@ -56,6 +56,8 @@ type GLTFResult = GLTF & {
     ['Material.001']: THREE.MeshStandardMaterial
   }
 }
+
+// "HEAD OF A BEARDED MAN - BRITISH MUSEUM 2020" (https://skfb.ly/6QZCD) by Arqueomodel3D is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/).
 
 function Model(props) {
   const group = useRef<THREE.Group>()
