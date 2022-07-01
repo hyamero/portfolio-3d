@@ -1,7 +1,7 @@
 import Heading from '@/components/dom/Heading'
 import dynamic from 'next/dynamic'
 
-const Model = dynamic(() => import('@/components/canvas/Model'), {
+const SceneIndex = dynamic(() => import('@/components/canvas/SceneIndex'), {
   ssr: false,
 })
 
@@ -11,7 +11,7 @@ const Page = (props) => {
 
 Page.r3f = (props) => (
   <>
-    <Model />
+    <SceneIndex />
   </>
 )
 
