@@ -1,5 +1,6 @@
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
+import { Navbar } from '../dom/Navbar'
 
 const Dom = ({ children }) => {
   const ref = useRef(null)
@@ -9,9 +10,10 @@ const Dom = ({ children }) => {
 
   return (
     <div
-      className='absolute top-0 left-0 z-10 w-screen h-screen overflow-hidden dom'
+      className='absolute top-0 left-0 z-10 w-screen h-screen mx-auto overflow-hidden dom'
       ref={ref}
     >
+      <Navbar />
       {children}
     </div>
   )

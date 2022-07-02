@@ -6,7 +6,12 @@ module.exports = {
   ], // remove unused styles in production
   darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        fog: ['FogtwoNo5', 'serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
+      },
+    },
   },
   variants: {
     extend: {},
