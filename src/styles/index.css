@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,4 +18,9 @@
     padding: 0;
     overflow: hidden;
   }
+}
+
+@font-face {
+  font-family: 'FogtwoNo5';
+  src: url(/fogtwoNo5.otf);
 }
