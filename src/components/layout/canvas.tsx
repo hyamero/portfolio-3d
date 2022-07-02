@@ -26,7 +26,6 @@ const LCanvas = ({ children }) => {
 
   return (
     <Canvas
-      // mode='concurrent'
       style={{
         position: 'absolute',
         top: 0,
