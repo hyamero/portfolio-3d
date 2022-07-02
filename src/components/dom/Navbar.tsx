@@ -7,10 +7,10 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
   const router = useStore((s) => s.router)
 
   return (
-    <nav className='flex justify-between w-screen px-20 pt-10 text-white'>
-      <span className='text-xl font-fog'>Dale B.</span>
+    <nav className='flex items-center justify-between w-full pt-10 text-white'>
+      <span className='text-lg font-fog'>Dale B.</span>
       <span
-        className='font-light tracking-widest cursor-pointer font-ubuntu'
+        className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
         onClick={() => router.push('/about')}
       >
         EXPERIENCE

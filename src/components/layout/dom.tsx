@@ -10,7 +10,7 @@ const Dom = ({ children }) => {
 
   return (
     <div
-      className='absolute top-0 left-0 z-10 w-screen h-screen mx-auto overflow-hidden dom'
+      className='absolute top-0 left-0 z-10 w-screen h-screen px-20 mx-auto overflow-hidden dom'
       ref={ref}
     >
       <Navbar />
