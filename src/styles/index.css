@@ -18,6 +18,10 @@
     padding: 0;
     overflow: hidden;
   }
+
+  body {
+    background-color: #050505;
+  }
 }
 
 @font-face {

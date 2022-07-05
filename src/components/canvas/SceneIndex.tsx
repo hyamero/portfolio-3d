@@ -32,8 +32,9 @@ const SceneIndex = ({}) => {
           rotation={[0, -0.2, 0]}
         />
         <Title>{`Joseph Dale`}</Title>
+        <TitleL>{`Joseph Dale`}</TitleL>
       </Suspense>
-      <Sparkles count={50} scale={[20, 20, 10]} size={1} speed={2} />
+      <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />
       <EffectComposer multisampling={0} disableNormalPass={true}>
         <Bloom
           luminanceThreshold={0}
@@ -62,7 +63,25 @@ function Title({ children }) {
       anchorY='middle'
     >
       {children}
-      <meshStandardMaterial roughness={0} metalness={0.5} color='#474747' />
+      <meshBasicMaterial color='#c4c4c4' />
+    </Text>
+  )
+}
+
+function TitleL({ children }) {
+  const { width } = useThree((state) => state.viewport)
+  return (
+    <Text
+      position={[0, 0, -10]}
+      lineHeight={1.3}
+      font='/FogtwoNo5.otf'
+      fontSize={width / 3.5}
+      material-toneMapped={false}
+      anchorX='center'
+      anchorY='middle'
+    >
+      {children}
+      <meshStandardMaterial roughness={1} metalness={0.5} color='#474747' />
     </Text>
   )
 }
