@@ -28,3 +28,51 @@
   font-family: 'FogtwoNo5';
   src: url(/fogtwoNo5.otf);
 }
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.num::before {
+  counter-increment: menucounter;
+  content: counters(menucounter, '.', decimal-leading-zero);
+  position: absolute;
+  left: -15px;
+  top: -0.1rem;
+  font-size: 10px;
+}
+
+.menu-item-text {
+  pointer-events: none;
+  line-height: 1;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.menu-item > div:nth-child(1) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: bottom;
+  display: inline-block;
+}
+
+.menu-item > div:nth-child(2) span {
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  transition-delay: calc(0.05s * var(--index));
+  transform-origin: top;
+  display: inline-block;
+  transform: translate3d(0, 100%, 0) rotateX(-90deg);
+}
+
+.menu-item:hover > div:nth-child(1) span {
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+
+.menu-item:hover > div:nth-child(2) span {
+  transform: translate3d(0, 0%, 0) rotateX(0deg);
+}
