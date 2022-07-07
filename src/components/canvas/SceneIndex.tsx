@@ -56,7 +56,7 @@ const SceneIndex = ({}) => {
   )
 }
 
-function Title({ children }) {
+export function Title({ children }) {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
@@ -92,7 +92,7 @@ function TitleL({ children }) {
   )
 }
 
-function Rig({ v = new THREE.Vector3() }) {
+export function Rig({ v = new THREE.Vector3() }) {
   return useFrame((state) => {
     state.camera.position.lerp(
       v.set(-state.mouse.x / 2, state.mouse.y / 2, 10),
