@@ -1,5 +1,5 @@
 import useStore from '@/helpers/store'
-import { Sparkles, Text } from '@react-three/drei'
+import { Html, Loader, Sparkles, Text } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import {
   Bloom,
@@ -25,7 +25,13 @@ const SceneIndex = ({}) => {
       <color attach='background' args={['#050505']} />
       <fog attach='fog' args={[0x050505, 0, 28]} />
       <pointLight position={[0, 10, -7]} intensity={1} />
-      <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <Html>
+            <Loader />
+          </Html>
+        }
+      >
         <Model
           onClick={() => router.push('/about')}
           position={[0, -6, 0]}
@@ -40,7 +46,7 @@ const SceneIndex = ({}) => {
           luminanceThreshold={0}
           luminanceSmoothing={0.9}
           height={300}
-          opacity={3}
+          opacity={2}
         />
         <Noise opacity={0.025} />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
@@ -50,7 +56,7 @@ const SceneIndex = ({}) => {
   )
 }
 
-function Title({ children }) {
+export function Title({ children }) {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
@@ -86,7 +92,7 @@ function TitleL({ children }) {
   )
 }
 
-function Rig({ v = new THREE.Vector3() }) {
+export function Rig({ v = new THREE.Vector3() }) {
   return useFrame((state) => {
     state.camera.position.lerp(
       v.set(-state.mouse.x / 2, state.mouse.y / 2, 10),
