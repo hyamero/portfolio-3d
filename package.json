@@ -2,7 +2,7 @@
   "name": "react-three-next",
   "version": "2.0.0",
   "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
+    "Joseph Dale Bañares"
   ],
   "license": "MIT",
   "private": true,
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.17.0",
+    "@react-three/cannon": "^6.3.0",
     "@react-three/drei": "^9.14.3",
     "@react-three/fiber": "^8.0.27",
     "@react-three/postprocessing": "^2.3.3",
