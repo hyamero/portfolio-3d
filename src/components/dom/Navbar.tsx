@@ -12,12 +12,26 @@ export const Navbar: React.FC = ({}) => {
       >
         Dale B.
       </span>
-      <span
-        className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
-        onClick={() => router.push('/about')}
-      >
-        EXPERIENCE
-      </span>
+      <ul className='flex space-x-10'>
+        <li
+          onClick={() => router.push('/')}
+          className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
+        >
+          HOME
+        </li>
+        <li
+          onClick={() => router.push('/about')}
+          className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
+        >
+          EXPERIENCE
+        </li>
+        <li
+          onClick={() => router.push('/contact')}
+          className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
+        >
+          CONTACT
+        </li>
+      </ul>
     </nav>
   )
 }
