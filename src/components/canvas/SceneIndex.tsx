@@ -56,7 +56,7 @@ const SceneIndex = ({}) => {
   )
 }
 
-export function Title({ children }) {
+function Title({ children }) {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
