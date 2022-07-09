@@ -1,6 +1,6 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 
-export default function Heading() {
+export const Heading = () => {
   return (
     <main className='relative flex items-center justify-between h-full px-20'>
       <span className='relative self-start text-xl font-light uppercase pointer-events-none indent-10 text-white/50 font-ubuntu whitespace-nowrap top-64'>
