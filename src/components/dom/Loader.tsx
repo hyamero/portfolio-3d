@@ -35,7 +35,7 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
       <a.span
         ref={textSpringRef}
         style={textSpring1}
-        className='text-3xl text-white font-fog'
+        className='relative text-3xl text-white font-fog bottom-8'
       >
         Joseph Dale Bañares
       </a.span>

@@ -37,7 +37,7 @@ const LCanvas = ({ children }) => {
       {/* <LControl /> */}
       <Preload all />
       {children}
-      <Stats />
+      {/* <Stats /> */}
     </Canvas>
   )
 }
