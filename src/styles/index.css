@@ -32,7 +32,6 @@
 .hover-effect {
   cursor: pointer;
   position: relative;
-  display: inline-block;
 }
 
 .hover-effect:after {

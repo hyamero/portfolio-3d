@@ -29,7 +29,7 @@ export const Heading = () => {
               <br />
               From 2D Web Elements to 3D Web <br /> Integrations.
             </span>
-            <button className='relative flex items-center self-end text-2xl italic font-light leading-none tracking-wider pointer-events-auto border-b-[0.5px] text-white/70 border-white/70 right-5 bottom-2 transition-all hover:animate-pulse font-fog'>
+            <button className='relative flex items-center self-end text-2xl italic font-light leading-none tracking-wider pointer-events-auto text-white/70  right-5 bottom-2 transition-all font-fog hover-effect'>
               Projects
               <FiArrowUpRight />
             </button>
@@ -42,16 +42,16 @@ export const Heading = () => {
 
 const Socials: React.FC = () => {
   return (
-    <ul className='absolute left-0 flex text-sm font-light tracking-widest underline bottom-10 text-white/70 space-x-5 font-ubuntu underline-offset-2'>
-      <li className='flex items-end cursor-pointer transition-all hover:text-white'>
+    <ul className='absolute left-0 flex text-sm font-light tracking-widest bottom-10 text-white/70 space-x-5 font-ubuntu [&>li]:flex [&>li]:items-center [&>li]:cursor-pointer [&>li]:transition-all'>
+      <li className=' hover:text-white'>
         <a href='https://github.com/hyamero'>GITHUB</a>
         <FiArrowUpRight />
       </li>
-      <li className='flex items-end cursor-pointer transition-all hover:text-white'>
+      <li className=' hover:text-white'>
         <a href='https://www.instagram.com/dale.hyamero/?hl=en'>INSTAGRAM</a>
         <FiArrowUpRight />
       </li>
-      <li className='flex items-end cursor-pointer transition-all hover:text-white'>
+      <li className=' hover:text-white'>
         <a href='https://www.linkedin.com/in/daleban/'>LINKEDIN</a>
         <FiArrowUpRight />
       </li>
