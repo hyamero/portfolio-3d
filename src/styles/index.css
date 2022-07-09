@@ -28,3 +28,26 @@
   font-family: 'FogtwoNo5';
   src: url(/fogtwoNo5.otf);
 }
+
+.hover-effect {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.hover-effect:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: block;
+  right: 0;
+  background: white;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}

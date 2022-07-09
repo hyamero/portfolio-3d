@@ -12,23 +12,14 @@ export const Navbar: React.FC = ({}) => {
       >
         Dale B.
       </span>
-      <ul className='flex space-x-10'>
-        <li
-          onClick={() => router.push('/')}
-          className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
-        >
+      <ul className='flex text-sm font-light tracking-wider space-x-10 font-ubuntu [&>*]:cursor-pointer [&>*]:leading-none'>
+        <li onClick={() => router.push('/')} className='hover-effect'>
           HOME
         </li>
-        <li
-          onClick={() => router.push('/about')}
-          className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
-        >
-          EXPERIENCE
+        <li onClick={() => router.push('/about')} className='hover-effect'>
+          PROJECTS
         </li>
-        <li
-          onClick={() => router.push('/contact')}
-          className='text-sm font-light tracking-widest cursor-pointer font-ubuntu'
-        >
+        <li onClick={() => router.push('/contact')} className='hover-effect'>
           CONTACT
         </li>
       </ul>
