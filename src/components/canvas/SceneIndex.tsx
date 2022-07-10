@@ -1,4 +1,3 @@
-import useStore from '@/helpers/store'
 import { Html, Loader, Sparkles, Text } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import {
@@ -13,8 +12,6 @@ import * as THREE from 'three'
 import { Suspense } from 'react'
 
 const SceneIndex = ({}) => {
-  const router = useStore((s) => s.router)
-
   useFrame((state) => {
     state.camera.position.lerp({ x: 0, y: 0, z: 12 } as Vector3, 0.005)
     state.camera.lookAt(0, 0, 0)
@@ -32,15 +29,11 @@ const SceneIndex = ({}) => {
           </Html>
         }
       >
-        <Model
-          onClick={() => router.push('/about')}
-          position={[0, -6, 0]}
-          rotation={[0, -0.2, 0]}
-        />
+        <Model position={[0, -6, 0]} rotation={[0, -0.2, 0]} />
         <Title>{`Joseph Dale`}</Title>
         <TitleL>{`Joseph Dale`}</TitleL>
+        <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />
       </Suspense>
-      <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />
       <EffectComposer multisampling={0} disableNormalPass={true}>
         <Bloom
           luminanceThreshold={0}
@@ -56,7 +49,7 @@ const SceneIndex = ({}) => {
   )
 }
 
-export function Title({ children }) {
+function Title({ children }) {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text

@@ -27,7 +27,6 @@ const Clump: React.FC<ClumpProps> = ({}) => {
       <fog attach='fog' args={[0x050505, 0, 28]} />
       <Lights />
       <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />
-      <Title>{'hyamero@daleban.tech'}</Title>
       <Suspense
         fallback={
           <Html>
@@ -35,6 +34,7 @@ const Clump: React.FC<ClumpProps> = ({}) => {
           </Html>
         }
       >
+        <Title>{'hyamero@daleban.tech'}</Title>
         <Physics gravity={[0, 5, 0]} iterations={10}>
           <Pointer />
           <Balls />

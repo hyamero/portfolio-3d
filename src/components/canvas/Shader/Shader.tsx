@@ -49,7 +49,7 @@ const Shader = (props) => {
       onPointerOut={(e) => setHover(false)}
       {...props}
     >
-      <boxBufferGeometry args={[1, 1, 1]} />
+      <boxBufferGeometry args={[2, 2, 2]} />
       {/* @ts-ignore */}
       <colorShiftMaterial key={ColorShiftMaterial.key} time={3} />
     </mesh>

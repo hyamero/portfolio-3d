@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.17.0",
+    "@react-spring/web": "^9.4.5",
     "@react-three/cannon": "^6.3.0",
     "@react-three/drei": "^9.14.3",
     "@react-three/fiber": "^8.0.27",
