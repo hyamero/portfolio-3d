@@ -12,14 +12,16 @@ const Dom = ({ children }) => {
   const [unmount, setUnmount] = useState<boolean>(false)
 
   return (
-    <div
-      className='absolute top-0 left-0 z-10 w-screen h-screen px-20 mx-auto overflow-hidden dom'
-      ref={ref}
-    >
-      {!unmount && <Loader setUnmount={setUnmount} />}
+    <>
       <Navbar />
-      {children}
-    </div>
+      <div
+        className='absolute top-0 left-0 z-10 w-screen h-screen px-20 mx-auto overflow-hidden dom'
+        ref={ref}
+      >
+        {!unmount && <Loader setUnmount={setUnmount} />}
+        {children}
+      </div>
+    </>
   )
 }
 
