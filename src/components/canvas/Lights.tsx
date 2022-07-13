@@ -22,13 +22,13 @@ export const Lights: React.FC<LightsProps> = ({}) => {
     )
     front.current.position.x = THREE.MathUtils.lerp(
       front.current.position.x,
-      pointer.x * -7,
-      0.08
+      -0.6 + pointer.x * -7,
+      0.07
     )
     front.current.position.y = THREE.MathUtils.lerp(
       front.current.position.y,
-      6.7 + pointer.y * -4,
-      0.08
+      6 + pointer.y * -4,
+      0.07
     )
   })
 
@@ -45,9 +45,9 @@ export const Lights: React.FC<LightsProps> = ({}) => {
         ref={front}
         penumbra={0.75}
         angle={Math.PI / 6}
-        position={[0, 0, 3]}
+        position={[0, 0, 2]}
         distance={14}
-        intensity={15}
+        intensity={10}
         shadow-mapSize={[2048, 2048]}
       />
     </>
