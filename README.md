@@ -24,4 +24,4 @@
 - [`@react-three/gltfjsx`](https://github.com/pmndrs/react-postprocessing) &ndash;  Postprocessing wrapper for react-three-fiber
 - [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances
 - [`zustand`](https://github.com/pmndrs/zustand) &ndash; State management
-- [`gsap`](https://greensock.com/gsap/) &ndash; Javascript animation
+- [`react-spring`](https://react-spring.dev/) &ndash; Javascript animation
