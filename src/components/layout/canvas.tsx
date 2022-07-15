@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, Stats } from '@react-three/drei'
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
+import { useRouter } from 'next/router'
 
 const LControl = () => {
   const dom = useStore((state) => state.dom)
@@ -24,11 +25,15 @@ const LControl = () => {
 const LCanvas = ({ children }) => {
   const dom = useStore((state) => state.dom)
 
+  const router = useRouter()
+  const path = router.pathname
+
   return (
     <Canvas
       style={{
         position: 'absolute',
         top: 0,
+        zIndex: `${path === '/projects' ? 11 : 9}`,
       }}
       onCreated={(state) => state.events.connect(dom.current)}
       shadows
