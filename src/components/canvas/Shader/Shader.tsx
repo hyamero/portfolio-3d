@@ -12,7 +12,7 @@ const Shader = (props) => {
   const ColorShiftMaterial = shaderMaterial(
     {
       uTime: 0,
-      uTexture: new THREE.TextureLoader().load(props.image.src),
+      uTexture: new THREE.TextureLoader().load(props.image),
       // color: new THREE.Color(0.05, 0.0, 0.025),
     },
     vertex,
@@ -40,15 +40,23 @@ const Shader = (props) => {
       <mesh
         ref={meshRef}
         {...props}
-        onPointerEnter={(e) => (document.body.style.cursor = 'pointer')}
-        onPointerLeave={(e) => (document.body.style.cursor = 'auto')}
+        onPointerEnter={(e) => {
+          if (props.pointer) document.body.style.cursor = 'pointer'
+          else return
+        }}
+        onPointerLeave={(e) => {
+          if (props.pointer) document.body.style.cursor = 'auto'
+          else return
+        }}
+        rotation={props.planeRotation}
       >
-        <planeBufferGeometry args={[0.4, 0.6, 32, 32]} />
+        <planeBufferGeometry args={props.planeArgs} />
         {/* @ts-ignore */}
         <colorShiftMaterial
           key={ColorShiftMaterial.key}
           uTime={3}
           side={DoubleSide}
+          wireframe={props.wireframe}
         />
       </mesh>
     </>
