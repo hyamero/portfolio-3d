@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
           />
 
           {images.map((image, i) => {
-            const { position, src } = image
+            const { position, src, title } = image
 
             return (
               <>
@@ -98,6 +98,19 @@ const Projects: React.FC = () => {
                   wireframe={false}
                   pointer={true}
                 />
+
+                <Text
+                  position={[0, position[1], 0.3]}
+                  lineHeight={1.3}
+                  fillOpacity={0.7}
+                  font='/FogtwoNo5.otf'
+                  fontSize={width / 16}
+                  material-toneMapped={false}
+                  anchorX='center'
+                  anchorY='middle'
+                >
+                  {title}
+                </Text>
               </>
             )
           })}
