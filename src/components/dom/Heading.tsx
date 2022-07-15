@@ -1,6 +1,9 @@
+import useStore from '@/helpers/store'
 import { FiArrowUpRight } from 'react-icons/fi'
 
 export const Heading = () => {
+  const router = useStore((s) => s.router)
+
   return (
     <main className='relative flex items-center justify-between h-full px-20'>
       <span className='relative self-start text-xl font-light uppercase pointer-events-none indent-10 text-white/50 font-ubuntu whitespace-nowrap top-64'>
@@ -29,7 +32,10 @@ export const Heading = () => {
               <br />
               From 2D Web Elements to 3D Web <br /> Integrations.
             </span>
-            <button className='relative flex items-center self-end text-2xl italic font-light leading-none tracking-wider pointer-events-auto text-white/70  right-5 bottom-2 transition-all font-fog hover-effect'>
+            <button
+              onClick={() => router.push('/projects')}
+              className='relative flex items-center self-end text-2xl italic font-light leading-none tracking-wider pointer-events-auto text-white/70  right-5 bottom-2 transition-all font-fog hover-effect'
+            >
               Projects
               <FiArrowUpRight />
             </button>
