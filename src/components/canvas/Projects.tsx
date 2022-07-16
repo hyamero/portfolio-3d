@@ -16,31 +16,25 @@ const Projects: React.FC = () => {
     {
       title: 'Uno',
       position: [-0.1, -1 + posY, -0.09],
-      src: 'https://images.unsplash.com/photo-1654787004033-dbf0ef364cfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      src: '/img/projects/iphone.jpg',
     },
 
     {
       title: 'Dos',
       position: [0.1, -2 + posY, -0.2],
-      src: 'https://images.unsplash.com/photo-1518112166137-85f9979a43aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      src: '/img/projects/laptop.jpg',
     },
 
     {
       title: 'Tres',
       position: [-0.1, -3 + posY, -0.09],
-      src: 'https://images.unsplash.com/photo-1654787004033-dbf0ef364cfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      src: '/img/projects/hello.jpg',
     },
 
     {
       title: 'Cuatro',
       position: [0.1, -4 + posY, -0.2],
-      src: 'https://images.unsplash.com/photo-1518112166137-85f9979a43aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-    },
-
-    {
-      title: 'Cinco',
-      position: [-0.1, -5 + posY, -0.09],
-      src: 'https://images.unsplash.com/photo-1654787004033-dbf0ef364cfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      src: '/img/projects/head.jpg',
     },
   ]
 
@@ -57,7 +51,7 @@ const Projects: React.FC = () => {
       />
 
       <ScrollControls
-        pages={6.5}
+        pages={5.5}
         distance={1}
         damping={4}
         horizontal={false}
