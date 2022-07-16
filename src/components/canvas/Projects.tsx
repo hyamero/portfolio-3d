@@ -1,4 +1,5 @@
 import {
+  OrbitControls,
   PerspectiveCamera,
   Scroll,
   ScrollControls,
@@ -21,7 +22,7 @@ const Projects: React.FC = () => {
 
     {
       title: 'Dos',
-      position: [0.1, -2 + posY, -0.2],
+      position: [0.1, -2 + posY, -0.09],
       src: '/img/projects/laptop.jpg',
     },
 
@@ -33,7 +34,7 @@ const Projects: React.FC = () => {
 
     {
       title: 'Cuatro',
-      position: [0.1, -4 + posY, -0.2],
+      position: [0.1, -4 + posY, -0.09],
       src: '/img/projects/head.jpg',
     },
   ]
@@ -60,8 +61,8 @@ const Projects: React.FC = () => {
         <fog attach='fog' args={[0x050505, 0, 6]} />
         <Scroll>
           <Sparkles
-            count={40}
-            position={[0, -2, 0]}
+            count={35}
+            position={[-0.5, -2, -3.5]}
             scale={[6, 10, 10]}
             size={1}
             speed={2}
@@ -94,8 +95,7 @@ const Projects: React.FC = () => {
                 />
 
                 <Text
-                  position={[0, position[1], 0.3]}
-                  lineHeight={1.3}
+                  position={[0, position[1], 0.1]}
                   fillOpacity={0.7}
                   font='/FogtwoNo5.otf'
                   fontSize={width / 16}
@@ -105,16 +105,31 @@ const Projects: React.FC = () => {
                 >
                   {title}
                 </Text>
+
+                <Text
+                  position={[-position[0], position[1], 0.4]}
+                  strokeWidth={'0.1%'}
+                  strokeOpacity={0.4}
+                  strokeColor='#ffffff'
+                  fillOpacity={0}
+                  font='/FogtwoNo5.otf'
+                  fontSize={width / 8}
+                  material-toneMapped={false}
+                  anchorX={`${position[0] === 0.1 ? 'right' : 'left'}`}
+                  anchorY='middle'
+                >
+                  {i + 1}
+                </Text>
               </>
             )
           })}
           <Text
-            position={[0, 0.5, -2.4]}
+            position={[0, 0.5, -3]}
             rotation={[-0.3, 0, 0]}
             lineHeight={1.3}
             fillOpacity={1}
             font='/FogtwoNo5.otf'
-            fontSize={width / 2.4}
+            fontSize={width / 2}
             material-toneMapped={false}
             anchorX='center'
             anchorY='middle'
@@ -123,6 +138,11 @@ const Projects: React.FC = () => {
           </Text>
         </Scroll>
       </ScrollControls>
+
+      {/* 
+      Debug
+       */}
+      {/* <OrbitControls /> */}
     </>
   )
 }
