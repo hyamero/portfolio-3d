@@ -69,9 +69,7 @@ const Projects: React.FC = () => {
           />
 
           <Shader
-            image={
-              'https://images.unsplash.com/photo-1518112166137-85f9979a43aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-            }
+            image={'/img/projects/texture.webp'}
             position={[0, -0.2, -1]}
             planeArgs={[6, 4, 32, 32]}
             planeRotation={[-Math.PI / 2.3, 0, 0]}
@@ -124,7 +122,7 @@ const Projects: React.FC = () => {
             )
           })}
           <Text
-            position={[0, 0.5, -3]}
+            position={[0, 0.7, -3]}
             rotation={[-0.3, 0, 0]}
             lineHeight={1.3}
             fillOpacity={1}
