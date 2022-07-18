@@ -18,24 +18,28 @@ const Projects: React.FC = () => {
       title: 'Uno',
       position: [-0.1, -1 + posY, -0.09],
       src: '/img/projects/iphone.jpg',
+      url: 'https://iphone-config.vercel.app/',
     },
 
     {
       title: 'Dos',
       position: [0.1, -2 + posY, -0.09],
       src: '/img/projects/laptop.jpg',
+      url: 'https://collective-api.vercel.app/',
     },
 
     {
       title: 'Tres',
       position: [-0.1, -3 + posY, -0.09],
       src: '/img/projects/hello.jpg',
+      url: 'https://chatti.vercel.app/direct/public',
     },
 
     {
       title: 'Cuatro',
       position: [0.1, -4 + posY, -0.09],
       src: '/img/projects/head.jpg',
+      url: 'https://github.com/hyamero',
     },
   ]
 
@@ -78,7 +82,7 @@ const Projects: React.FC = () => {
           />
 
           {images.map((image, i) => {
-            const { position, src, title } = image
+            const { position, src, title, url } = image
 
             return (
               <>
@@ -90,6 +94,7 @@ const Projects: React.FC = () => {
                   planeRotation={[0, 0, 0]}
                   wireframe={false}
                   pointer={true}
+                  url={url}
                 />
 
                 <Text
