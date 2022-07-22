@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 import { useFrame, extend } from '@react-three/fiber'
 import { useRef } from 'react'
-import useStore from '@/helpers/store'
 import { shaderMaterial } from '@react-three/drei'
 
 import vertex from './glsl/shader.vert'
@@ -26,7 +25,6 @@ const Shader = (props) => {
 
   extend({ ColorShiftMaterial })
   const meshRef = useRef(null)
-  const router = useStore((state) => state.router)
 
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime()
@@ -34,6 +32,14 @@ const Shader = (props) => {
       meshRef.current.material.uniforms.uTime.value = time * 0.4
     }
   })
+
+  const openInNewTab = (href) => {
+    Object.assign(document.createElement('a'), {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      href: href,
+    }).click()
+  }
 
   return (
     <>
@@ -48,6 +54,7 @@ const Shader = (props) => {
           if (props.pointer) document.body.style.cursor = 'auto'
           else return
         }}
+        onClick={() => openInNewTab(props.url)}
         rotation={props.planeRotation}
       >
         <planeBufferGeometry args={props.planeArgs} />

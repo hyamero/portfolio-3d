@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import * as THREE from 'three'
-import { useDetectGPU, useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { GLTF } from 'three-stdlib'
 import { Lights } from './Lights'
@@ -20,7 +20,6 @@ type GLTFResult = GLTF & {
 
 export const Model: React.FC<any> = (props) => {
   const group = useRef<THREE.Group>()
-  const { isMobile } = useDetectGPU()
 
   const { nodes } = useGLTF('/marble_head.gltf') as GLTFResult
 
@@ -39,25 +38,17 @@ export const Model: React.FC<any> = (props) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      {!isMobile && (
-        <>
-          <group
-            position={[-0.5, 5.5, -8]}
-            rotation={[-1.51, 0, Math.PI * 1.8]}
-            scale={3.5}
-          >
-            <mesh castShadow receiveShadow geometry={nodes.Object_2.geometry}>
-              <meshStandardMaterial
-                roughness={0}
-                metalness={0.5}
-                color='#474747'
-              />
-            </mesh>
-            <mesh castShadow receiveShadow geometry={nodes.Object_3.geometry} />
-          </group>
-          <Lights />
-        </>
-      )}
+      <group
+        position={[-0.5, 5.5, -8]}
+        rotation={[-1.51, 0, Math.PI * 1.8]}
+        scale={3.5}
+      >
+        <mesh castShadow receiveShadow geometry={nodes.Object_2.geometry}>
+          <meshStandardMaterial roughness={0} metalness={0.5} color='#474747' />
+        </mesh>
+        <mesh castShadow receiveShadow geometry={nodes.Object_3.geometry} />
+      </group>
+      <Lights />
     </group>
   )
 }

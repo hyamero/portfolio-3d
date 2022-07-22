@@ -1,4 +1,5 @@
 import {
+  OrbitControls,
   PerspectiveCamera,
   Scroll,
   ScrollControls,
@@ -16,31 +17,29 @@ const Projects: React.FC = () => {
     {
       title: 'Uno',
       position: [-0.1, -1 + posY, -0.09],
-      src: 'https://images.unsplash.com/photo-1654787004033-dbf0ef364cfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      src: '/img/projects/iphone.jpg',
+      url: 'https://iphone-config.vercel.app/',
     },
 
     {
       title: 'Dos',
-      position: [0.1, -2 + posY, -0.2],
-      src: 'https://images.unsplash.com/photo-1518112166137-85f9979a43aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      position: [0.1, -2 + posY, -0.09],
+      src: '/img/projects/laptop.jpg',
+      url: 'https://collective-api.vercel.app/',
     },
 
     {
       title: 'Tres',
       position: [-0.1, -3 + posY, -0.09],
-      src: 'https://images.unsplash.com/photo-1654787004033-dbf0ef364cfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      src: '/img/projects/hello.jpg',
+      url: 'https://chatti.vercel.app/direct/public',
     },
 
     {
       title: 'Cuatro',
-      position: [0.1, -4 + posY, -0.2],
-      src: 'https://images.unsplash.com/photo-1518112166137-85f9979a43aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-    },
-
-    {
-      title: 'Cinco',
-      position: [-0.1, -5 + posY, -0.09],
-      src: 'https://images.unsplash.com/photo-1654787004033-dbf0ef364cfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
+      position: [0.1, -4 + posY, -0.09],
+      src: '/img/projects/head.jpg',
+      url: 'https://github.com/hyamero',
     },
   ]
 
@@ -57,7 +56,7 @@ const Projects: React.FC = () => {
       />
 
       <ScrollControls
-        pages={6.5}
+        pages={5.5}
         distance={1}
         damping={4}
         horizontal={false}
@@ -66,17 +65,15 @@ const Projects: React.FC = () => {
         <fog attach='fog' args={[0x050505, 0, 6]} />
         <Scroll>
           <Sparkles
-            count={40}
-            position={[0, -2, 0]}
+            count={35}
+            position={[-0.5, -2, -3.5]}
             scale={[6, 10, 10]}
             size={1}
             speed={2}
           />
 
           <Shader
-            image={
-              'https://images.unsplash.com/photo-1518112166137-85f9979a43aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-            }
+            image={'/img/projects/texture.webp'}
             position={[0, -0.2, -1]}
             planeArgs={[6, 4, 32, 32]}
             planeRotation={[-Math.PI / 2.3, 0, 0]}
@@ -85,7 +82,7 @@ const Projects: React.FC = () => {
           />
 
           {images.map((image, i) => {
-            const { position, src, title } = image
+            const { position, src, title, url } = image
 
             return (
               <>
@@ -97,11 +94,11 @@ const Projects: React.FC = () => {
                   planeRotation={[0, 0, 0]}
                   wireframe={false}
                   pointer={true}
+                  url={url}
                 />
 
                 <Text
-                  position={[0, position[1], 0.3]}
-                  lineHeight={1.3}
+                  position={[0, position[1], 0.1]}
                   fillOpacity={0.7}
                   font='/FogtwoNo5.otf'
                   fontSize={width / 16}
@@ -111,16 +108,31 @@ const Projects: React.FC = () => {
                 >
                   {title}
                 </Text>
+
+                <Text
+                  position={[-position[0], position[1], 0.4]}
+                  strokeWidth={'0.1%'}
+                  strokeOpacity={0.4}
+                  strokeColor='#ffffff'
+                  fillOpacity={0}
+                  font='/FogtwoNo5.otf'
+                  fontSize={width / 8}
+                  material-toneMapped={false}
+                  anchorX={`${position[0] === 0.1 ? 'right' : 'left'}`}
+                  anchorY='middle'
+                >
+                  {i + 1}
+                </Text>
               </>
             )
           })}
           <Text
-            position={[0, 0.5, -2.4]}
+            position={[0, 0.7, -3]}
             rotation={[-0.3, 0, 0]}
             lineHeight={1.3}
             fillOpacity={1}
             font='/FogtwoNo5.otf'
-            fontSize={width / 2.4}
+            fontSize={width / 2}
             material-toneMapped={false}
             anchorX='center'
             anchorY='middle'
@@ -129,6 +141,11 @@ const Projects: React.FC = () => {
           </Text>
         </Scroll>
       </ScrollControls>
+
+      {/* 
+      Debug
+       */}
+      {/* <OrbitControls /> */}
     </>
   )
 }
