@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading } from '@/components/dom/Heading'
+import { IndexOverlay } from '@/components/dom/IndexOverlay'
 import dynamic from 'next/dynamic'
 
 const SceneIndex = dynamic(() => import('@/components/canvas/SceneIndex'), {
@@ -9,7 +9,7 @@ const SceneIndex = dynamic(() => import('@/components/canvas/SceneIndex'), {
 const Page = (props) => {
   return (
     <>
-      <Heading />
+      <IndexOverlay />
     </>
   )
 }

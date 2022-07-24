@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic'
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
 
-const Clump = dynamic(() => import('@/components/canvas/Clump'), {
+const ObjectClump = dynamic(() => import('@/components/canvas/ObjectClump'), {
   ssr: false,
 })
 const Page = (props) => {
@@ -16,7 +16,7 @@ const Page = (props) => {
 // It will receive same props as Page component (from getStaticProps, etc.)
 Page.r3f = (props) => (
   <>
-    <Clump />
+    <ObjectClump />
   </>
 )
 

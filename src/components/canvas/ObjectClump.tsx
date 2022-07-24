@@ -8,7 +8,6 @@ import {
   Loader,
   Text,
   PerspectiveCamera,
-  OrbitControls,
 } from '@react-three/drei'
 
 interface ClumpProps {}
@@ -20,7 +19,7 @@ const baubleMaterial = new THREE.MeshLambertMaterial({
   emissive: 'black',
 })
 
-const Clump: React.FC<ClumpProps> = ({}) => {
+const ObjectClump: React.FC<ClumpProps> = ({}) => {
   return (
     <>
       <PerspectiveCamera
@@ -151,4 +150,4 @@ function Title({ children }) {
   )
 }
 
-export default Clump
+export default ObjectClump

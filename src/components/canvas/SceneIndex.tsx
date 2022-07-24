@@ -1,4 +1,10 @@
-import { Html, Loader, Sparkles, Text } from '@react-three/drei'
+import {
+  Html,
+  Loader,
+  PerspectiveCamera,
+  Sparkles,
+  Text,
+} from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import {
   Bloom,
@@ -19,6 +25,14 @@ const SceneIndex = ({}) => {
 
   return (
     <>
+      <PerspectiveCamera
+        makeDefault
+        position={[0, 0, 14]}
+        fov={55}
+        near={0.1}
+        far={100}
+      />
+
       <color attach='background' args={['#050505']} />
       <fog attach='fog' args={[0x050505, 0, 28]} />
       <pointLight position={[0, 10, -7]} intensity={1} />

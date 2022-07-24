@@ -6,9 +6,12 @@ import dynamic from 'next/dynamic'
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
 
-const Projects = dynamic(() => import('@/components/canvas/Projects'), {
-  ssr: false,
-})
+const ProjectsShader = dynamic(
+  () => import('@/components/canvas/ProjectsShader'),
+  {
+    ssr: false,
+  }
+)
 
 const Page = (props) => {
   return <></>
@@ -17,7 +20,7 @@ const Page = (props) => {
 // It will receive same props as Page component (from getStaticProps, etc.)
 Page.r3f = (props) => (
   <>
-    <Projects />
+    <ProjectsShader />
   </>
 )
 

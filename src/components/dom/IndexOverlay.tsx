@@ -1,7 +1,7 @@
 import useStore from '@/helpers/store'
 import { FiArrowUpRight } from 'react-icons/fi'
 
-export const Heading = () => {
+export const IndexOverlay = () => {
   const router = useStore((s) => s.router)
 
   return (
