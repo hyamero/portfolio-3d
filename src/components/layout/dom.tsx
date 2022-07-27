@@ -14,7 +14,7 @@ const Dom = ({ children }) => {
   const router = useRouter()
   const path = router.pathname
 
-  const [zIndex, setZIndex] = useState('')
+  const [zIndex, setZIndex] = useState('z-10')
 
   useEffect(() => {
     if (path !== '/') {

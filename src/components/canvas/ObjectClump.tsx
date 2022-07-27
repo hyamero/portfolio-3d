@@ -103,8 +103,8 @@ function Pointer() {
   }))
   return useFrame((state) =>
     api.position.set(
-      (state.mouse.x * viewport.width) / 0.5,
-      (state.mouse.y * viewport.height) / 0.5,
+      (state.mouse.x * viewport.width) / 0.2,
+      (state.mouse.y * viewport.height) / 0.2,
       0
     )
   )

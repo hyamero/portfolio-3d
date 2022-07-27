@@ -54,7 +54,7 @@ const Shader = (props) => {
           if (props.pointer) document.body.style.cursor = 'auto'
           else return
         }}
-        onClick={() => openInNewTab(props.url)}
+        onClick={() => props.url && openInNewTab(props.url)}
         rotation={props.planeRotation}
       >
         <planeBufferGeometry args={props.planeArgs} />
