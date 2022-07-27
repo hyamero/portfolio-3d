@@ -84,9 +84,8 @@ const ProjectsShader: React.FC = () => {
               const { position, src, title, url } = image
 
               return (
-                <>
+                <group key={url}>
                   <Shader
-                    key={url}
                     image={src}
                     position={position}
                     planeArgs={[0.4, 0.6, 32, 32]}
@@ -122,9 +121,22 @@ const ProjectsShader: React.FC = () => {
                   >
                     {i + 1}
                   </Text>
-                </>
+                </group>
               )
             })}
+            <Text
+              position={[0, 0.7, -3]}
+              rotation={[-0.3, 0, 0]}
+              lineHeight={1.3}
+              fillOpacity={1}
+              font='/FogtwoNo5.otf'
+              fontSize={width / 2}
+              material-toneMapped={false}
+              anchorX='center'
+              anchorY='middle'
+            >
+              Projects
+            </Text>
           </Suspense>
         </Scroll>
       </ScrollControls>
