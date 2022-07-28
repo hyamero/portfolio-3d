@@ -34,7 +34,7 @@ const Header = ({ title = titleDefault }) => {
         <meta name='og:type' content='site' />
         <meta name='og:url' content={url} />
         <meta name='og:image' content={'/icons/thumbnail.jpg'} />
-        <meta name='og:site_name' content={title} />
+        <meta name='og:site_name' content='3D Portfolio' />
         <meta name='og:description' content={description} />
 
         <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
