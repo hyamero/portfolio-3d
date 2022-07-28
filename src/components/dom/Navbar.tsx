@@ -1,5 +1,5 @@
-import useStore from '@/helpers/store'
 import React from 'react'
+import useStore from '@/helpers/store'
 
 export const Navbar: React.FC = ({}) => {
   const router = useStore((s) => s.router)

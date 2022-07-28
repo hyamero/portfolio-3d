@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import * as THREE from 'three'
-import { Physics, useSphere } from '@react-three/cannon'
 import { useFrame, useThree } from '@react-three/fiber'
+import { Physics, useSphere } from '@react-three/cannon'
 import {
   Sparkles,
   Html,
@@ -10,8 +10,6 @@ import {
   PerspectiveCamera,
 } from '@react-three/drei'
 
-interface ClumpProps {}
-
 const rfs = THREE.MathUtils.randFloatSpread
 const sphereGeometry = new THREE.SphereGeometry(1, 48, 48)
 const baubleMaterial = new THREE.MeshLambertMaterial({
@@ -19,7 +17,7 @@ const baubleMaterial = new THREE.MeshLambertMaterial({
   emissive: 'black',
 })
 
-const ObjectClump: React.FC<ClumpProps> = ({}) => {
+const ObjectClump = ({}) => {
   return (
     <>
       <PerspectiveCamera
@@ -52,12 +50,11 @@ const ObjectClump: React.FC<ClumpProps> = ({}) => {
           <Balls />
         </Physics>
       </Suspense>
-      {/* <OrbitControls /> */}
     </>
   )
 }
 
-function Balls({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) {
+const Balls = ({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) => {
   const [ref, api] = useSphere<any>(() => ({
     args: [1],
     mass: 1,
@@ -94,7 +91,7 @@ function Balls({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) {
   )
 }
 
-function Pointer() {
+const Pointer = () => {
   const viewport = useThree((state) => state.viewport)
   const [, api] = useSphere(() => ({
     type: 'Kinematic',
@@ -127,7 +124,7 @@ const Lights = () => {
   )
 }
 
-function Title({ children }) {
+const Title = ({ children }) => {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text

@@ -1,5 +1,5 @@
-import { a, useChain, useSpring, useSpringRef } from '@react-spring/web'
 import React from 'react'
+import { a, useChain, useSpring, useSpringRef } from '@react-spring/web'
 
 interface LoaderProps {
   setUnmount: React.Dispatch<React.SetStateAction<boolean>>

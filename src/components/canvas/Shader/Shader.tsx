@@ -12,7 +12,6 @@ const Shader = (props) => {
     {
       uTime: 0,
       uTexture: new THREE.TextureLoader().load(props.image),
-      // color: new THREE.Color(0.05, 0.0, 0.025),
     },
     vertex,
     fragment
@@ -26,14 +25,14 @@ const Shader = (props) => {
   extend({ ColorShiftMaterial })
   const meshRef = useRef(null)
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const time = state.clock.getElapsedTime()
     if (meshRef.current.material) {
       meshRef.current.material.uniforms.uTime.value = time * 0.4
     }
   })
 
-  const openInNewTab = (href) => {
+  const openInNewTab = (href: string) => {
     Object.assign(document.createElement('a'), {
       target: '_blank',
       rel: 'noopener noreferrer',

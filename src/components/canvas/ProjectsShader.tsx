@@ -1,12 +1,15 @@
+import React, { Suspense } from 'react'
+import { useThree } from '@react-three/fiber'
 import {
+  Html,
+  Loader,
   PerspectiveCamera,
   Scroll,
   ScrollControls,
   Sparkles,
   Text,
 } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
-import React, { Suspense } from 'react'
+
 import Shader from './Shader/Shader'
 
 const ProjectsShader: React.FC = () => {
@@ -70,7 +73,13 @@ const ProjectsShader: React.FC = () => {
             size={1}
             speed={2}
           />
-          <Suspense>
+          <Suspense
+            fallback={
+              <Html>
+                <Loader />
+              </Html>
+            }
+          >
             <Shader
               image={'/img/projects/texture.webp'}
               position={[0, -0.2, -1]}

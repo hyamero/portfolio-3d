@@ -1,3 +1,8 @@
+import { Suspense } from 'react'
+import * as THREE from 'three'
+import { Vector3 } from 'three'
+
+import { useFrame, useThree } from '@react-three/fiber'
 import {
   Html,
   Loader,
@@ -5,17 +10,14 @@ import {
   Sparkles,
   Text,
 } from '@react-three/drei'
-import { useFrame, useThree } from '@react-three/fiber'
 import {
   Bloom,
   EffectComposer,
   Noise,
   Vignette,
 } from '@react-three/postprocessing'
-import { Vector3 } from 'three'
+
 import { Model } from './Model'
-import * as THREE from 'three'
-import { Suspense } from 'react'
 
 const SceneIndex = ({}) => {
   useFrame((state) => {
@@ -63,7 +65,7 @@ const SceneIndex = ({}) => {
   )
 }
 
-function Title({ children }) {
+const Title = ({ children }) => {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
@@ -81,7 +83,7 @@ function Title({ children }) {
   )
 }
 
-function TitleL({ children }) {
+const TitleL = ({ children }) => {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
@@ -99,7 +101,7 @@ function TitleL({ children }) {
   )
 }
 
-export function Rig({ v = new THREE.Vector3() }) {
+const Rig = ({ v = new THREE.Vector3() }) => {
   return useFrame((state) => {
     state.camera.position.lerp(
       v.set(-state.mouse.x / 2, state.mouse.y / 2, 10),
