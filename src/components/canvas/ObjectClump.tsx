@@ -1,17 +1,14 @@
 import React, { Suspense } from 'react'
 import * as THREE from 'three'
-import { Physics, useSphere } from '@react-three/cannon'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Sparkles, Html, Loader, Text } from '@react-three/drei'
+import { Physics, useSphere } from '@react-three/cannon'
 import {
-  Bloom,
-  EffectComposer,
-  Noise,
-  Vignette,
-} from '@react-three/postprocessing'
-import { Rig } from '@/components/canvas/SceneIndex'
-
-interface ClumpProps {}
+  Sparkles,
+  Html,
+  Loader,
+  Text,
+  PerspectiveCamera,
+} from '@react-three/drei'
 
 const rfs = THREE.MathUtils.randFloatSpread
 const sphereGeometry = new THREE.SphereGeometry(1, 48, 48)
@@ -20,13 +17,26 @@ const baubleMaterial = new THREE.MeshLambertMaterial({
   emissive: 'black',
 })
 
-const Clump: React.FC<ClumpProps> = ({}) => {
+const ObjectClump = ({}) => {
   return (
     <>
+      <PerspectiveCamera
+        makeDefault
+        position={[0, 0, 1]}
+        fov={55}
+        near={0.1}
+        far={100}
+      />
       <color attach='background' args={['#050505']} />
       <fog attach='fog' args={[0x050505, 0, 28]} />
       <Lights />
-      <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />
+      <Sparkles
+        count={30}
+        scale={[20, 10, 7]}
+        position-z={-5}
+        size={1}
+        speed={2}
+      />
       <Suspense
         fallback={
           <Html>
@@ -40,22 +50,11 @@ const Clump: React.FC<ClumpProps> = ({}) => {
           <Balls />
         </Physics>
       </Suspense>
-      <EffectComposer multisampling={0} disableNormalPass={true}>
-        <Bloom
-          luminanceThreshold={0}
-          luminanceSmoothing={0.9}
-          height={300}
-          opacity={3}
-        />
-        <Noise opacity={0.025} />
-        <Vignette eskil={false} offset={0.1} darkness={1.1} />
-      </EffectComposer>
-      <Rig />
     </>
   )
 }
 
-function Balls({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) {
+const Balls = ({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) => {
   const [ref, api] = useSphere<any>(() => ({
     args: [1],
     mass: 1,
@@ -87,22 +86,22 @@ function Balls({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) {
       args={[null, null, 60]}
       geometry={sphereGeometry}
       material={baubleMaterial}
-      position={[0, -2, -15]}
+      position={[0, -2, -20]}
     />
   )
 }
 
-function Pointer() {
+const Pointer = () => {
   const viewport = useThree((state) => state.viewport)
   const [, api] = useSphere(() => ({
     type: 'Kinematic',
-    args: [3],
+    args: [2],
     position: [0, 0, 0],
   }))
   return useFrame((state) =>
     api.position.set(
-      (state.mouse.x * viewport.width) / 2,
-      (state.mouse.y * viewport.height) / 2,
+      (state.mouse.x * viewport.width) / 0.2,
+      (state.mouse.y * viewport.height) / 0.2,
       0
     )
   )
@@ -125,13 +124,14 @@ const Lights = () => {
   )
 }
 
-function Title({ children }) {
+const Title = ({ children }) => {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
-      position={[0, 0, -8.5]}
+      position={[0, 0, -1]}
       rotation={[-0.3, 0, 0]}
       lineHeight={1.3}
+      fillOpacity={0.7}
       font='/FogtwoNo5.otf'
       fontSize={width / 8}
       material-toneMapped={false}
@@ -147,4 +147,4 @@ function Title({ children }) {
   )
 }
 
-export default Clump
+export default ObjectClump

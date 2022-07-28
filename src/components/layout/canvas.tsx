@@ -33,7 +33,7 @@ const LCanvas = ({ children }) => {
       style={{
         position: 'absolute',
         top: 0,
-        zIndex: `${path === '/projects' ? 11 : 9}`,
+        zIndex: `${path !== '/projects' ? 9 : 11}`,
       }}
       onCreated={(state) => state.events.connect(dom.current)}
       shadows

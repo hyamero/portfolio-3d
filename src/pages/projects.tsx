@@ -1,4 +1,7 @@
+import { CustomLoader } from '@/components/dom/Loader'
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
 // import Shader from '@/components/canvas/Shader/Shader'
 
 // Dynamic import is used to prevent a payload when the website start that will include threejs r3f etc..
@@ -6,18 +9,25 @@ import dynamic from 'next/dynamic'
 // If something goes wrong go back to a static import to show the error.
 // https://github.com/pmndrs/react-three-next/issues/49
 
-const Projects = dynamic(() => import('@/components/canvas/Projects'), {
-  ssr: false,
-})
+const ProjectsShader = dynamic(
+  () => import('@/components/canvas/ProjectsShader'),
+  {
+    ssr: false,
+  }
+)
 
 const Page = (props) => {
-  return <></>
+  const [unmount, setUnmount] = useState<boolean>(false)
+
+  return (
+    <>{!unmount && <CustomLoader setUnmount={setUnmount} text='Projects' />}</>
+  )
 }
 
 // It will receive same props as Page component (from getStaticProps, etc.)
 Page.r3f = (props) => (
   <>
-    <Projects />
+    <ProjectsShader />
   </>
 )
 

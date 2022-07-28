@@ -1,15 +1,23 @@
-import { Html, Loader, Sparkles, Text } from '@react-three/drei'
+import { Suspense } from 'react'
+import * as THREE from 'three'
+import { Vector3 } from 'three'
+
 import { useFrame, useThree } from '@react-three/fiber'
+import {
+  Html,
+  Loader,
+  PerspectiveCamera,
+  Sparkles,
+  Text,
+} from '@react-three/drei'
 import {
   Bloom,
   EffectComposer,
   Noise,
   Vignette,
 } from '@react-three/postprocessing'
-import { Vector3 } from 'three'
+
 import { Model } from './Model'
-import * as THREE from 'three'
-import { Suspense } from 'react'
 
 const SceneIndex = ({}) => {
   useFrame((state) => {
@@ -19,6 +27,14 @@ const SceneIndex = ({}) => {
 
   return (
     <>
+      <PerspectiveCamera
+        makeDefault
+        position={[0, 0, 14]}
+        fov={55}
+        near={0.1}
+        far={100}
+      />
+
       <color attach='background' args={['#050505']} />
       <fog attach='fog' args={[0x050505, 0, 28]} />
       <pointLight position={[0, 10, -7]} intensity={1} />
@@ -49,7 +65,7 @@ const SceneIndex = ({}) => {
   )
 }
 
-function Title({ children }) {
+const Title = ({ children }) => {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
@@ -67,7 +83,7 @@ function Title({ children }) {
   )
 }
 
-function TitleL({ children }) {
+const TitleL = ({ children }) => {
   const { width } = useThree((state) => state.viewport)
   return (
     <Text
@@ -85,7 +101,7 @@ function TitleL({ children }) {
   )
 }
 
-export function Rig({ v = new THREE.Vector3() }) {
+const Rig = ({ v = new THREE.Vector3() }) => {
   return useFrame((state) => {
     state.camera.position.lerp(
       v.set(-state.mouse.x / 2, state.mouse.y / 2, 10),

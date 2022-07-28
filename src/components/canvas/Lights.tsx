@@ -2,9 +2,7 @@ import { useFrame } from '@react-three/fiber'
 import React, { useRef } from 'react'
 import * as THREE from 'three'
 
-interface LightsProps {}
-
-export const Lights: React.FC<LightsProps> = ({}) => {
+export const Lights = ({}) => {
   const groupL = useRef(null)
   const groupR = useRef(null)
   const front = useRef(null)
