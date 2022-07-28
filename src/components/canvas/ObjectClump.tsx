@@ -60,7 +60,7 @@ const Balls = ({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) => {
     mass: 1,
     angularDamping: 0.1,
     linearDamping: 0.65,
-    position: [rfs(1), rfs(1), rfs(1)],
+    position: [rfs(20), rfs(20), rfs(20)],
   }))
   useFrame((state) => {
     for (let i = 0; i < 50; i++) {
@@ -83,7 +83,7 @@ const Balls = ({ mat = new THREE.Matrix4(), vec = new THREE.Vector3() }) => {
       ref={ref as any}
       castShadow
       receiveShadow
-      args={[null, null, 40]}
+      args={[null, null, 60]}
       geometry={sphereGeometry}
       material={baubleMaterial}
       position={[0, -2, -20]}
@@ -96,7 +96,7 @@ const Pointer = () => {
   const [, api] = useSphere(() => ({
     type: 'Kinematic',
     args: [2],
-    position: [0, 0, -15],
+    position: [0, 0, 0],
   }))
   return useFrame((state) =>
     api.position.set(
