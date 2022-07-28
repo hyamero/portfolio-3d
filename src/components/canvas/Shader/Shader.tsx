@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { useFrame, extend } from '@react-three/fiber'
+import { useFrame, extend, Vector3, Euler } from '@react-three/fiber'
 import { useRef } from 'react'
 import { shaderMaterial } from '@react-three/drei'
 
@@ -7,11 +7,34 @@ import vertex from './glsl/shader.vert'
 import fragment from './glsl/shader.frag'
 import { DoubleSide } from 'three'
 
-const Shader = (props) => {
+interface ShaderProps {
+  url?: string
+  image: string
+  pointer?: boolean
+  position?: Vector3
+  planeArgs: [
+    width?: number,
+    height?: number,
+    widthSegments?: number,
+    heightSegments?: number
+  ]
+  wireframe?: boolean
+  planeRotation: Euler
+}
+
+const Shader: React.FC<ShaderProps> = ({
+  url,
+  image,
+  pointer,
+  position,
+  planeArgs,
+  wireframe,
+  planeRotation,
+}) => {
   const ColorShiftMaterial = shaderMaterial(
     {
       uTime: 0,
-      uTexture: new THREE.TextureLoader().load(props.image),
+      uTexture: new THREE.TextureLoader().load(image),
     },
     vertex,
     fragment
@@ -44,25 +67,25 @@ const Shader = (props) => {
     <>
       <mesh
         ref={meshRef}
-        {...props}
         onPointerEnter={(e) => {
-          if (props.pointer) document.body.style.cursor = 'pointer'
+          if (pointer) document.body.style.cursor = 'pointer'
           else return
         }}
         onPointerLeave={(e) => {
-          if (props.pointer) document.body.style.cursor = 'auto'
+          if (pointer) document.body.style.cursor = 'auto'
           else return
         }}
-        onClick={() => props.url && openInNewTab(props.url)}
-        rotation={props.planeRotation}
+        onClick={() => url && openInNewTab(url)}
+        rotation={planeRotation}
+        position={position}
       >
-        <planeBufferGeometry args={props.planeArgs} />
+        <planeBufferGeometry args={planeArgs} />
         {/* @ts-ignore */}
         <colorShiftMaterial
           key={ColorShiftMaterial.key}
           uTime={3}
           side={DoubleSide}
-          wireframe={props.wireframe}
+          wireframe={wireframe}
         />
       </mesh>
     </>

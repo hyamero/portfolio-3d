@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import { useThree } from '@react-three/fiber'
+import { useThree, Vector3 } from '@react-three/fiber'
 import {
   Html,
   Loader,
@@ -82,11 +82,11 @@ const ProjectsShader: React.FC = () => {
           >
             <Shader
               image={'/img/projects/texture.webp'}
-              position={[0, -0.2, -1]}
               planeArgs={[6, 4, 32, 32]}
               planeRotation={[-Math.PI / 2.3, 0, 0]}
               wireframe={true}
               pointer={false}
+              position={[0, -0.2, -1]}
             />
 
             {images.map((image, i) => {
@@ -96,7 +96,7 @@ const ProjectsShader: React.FC = () => {
                 <group key={url}>
                   <Shader
                     image={src}
-                    position={position}
+                    position={position as Vector3}
                     planeArgs={[0.4, 0.6, 32, 32]}
                     planeRotation={[0, 0, 0]}
                     wireframe={false}
@@ -105,7 +105,7 @@ const ProjectsShader: React.FC = () => {
                   />
 
                   <Text
-                    position={[0, position[1], 0.1]}
+                    position={[0, position[1], 0.1] as Vector3}
                     fillOpacity={0.7}
                     font='/FogtwoNo5.otf'
                     fontSize={width / 16}
@@ -117,7 +117,7 @@ const ProjectsShader: React.FC = () => {
                   </Text>
 
                   <Text
-                    position={[-position[0], position[1], 0.4]}
+                    position={[-position[0], position[1], 0.4] as Vector3}
                     strokeWidth={'0.1%'}
                     strokeOpacity={0.4}
                     strokeColor='#ffffff'
