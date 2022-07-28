@@ -25,7 +25,7 @@ export default Page
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Dale',
+      title: 'Dale Bañares | Creative Developer',
     },
   }
 }

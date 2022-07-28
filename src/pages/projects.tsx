@@ -36,7 +36,7 @@ export default Page
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Projects',
+      title: 'Dale Bañares | Projects',
     },
   }
 }
