@@ -1,14 +1,19 @@
+# 3D Portfolio [R3F]
 <div align="center">
- <img src='https://user-images.githubusercontent.com/78056869/175852888-40da18e7-eba1-4a02-a57c-54865ac2def7.png' />
+ <img src='https://user-images.githubusercontent.com/78056869/181472860-136ef7ea-f92d-42f3-b978-706e6ab85b66.jpg' />
 </div>
 <br />
 
-<div align="center"><strong>Joseph Dale Bañares 3D Portfolio</strong></div>
-<div align="center">🚧🚧 This repo is under heavy development 🚧🚧</div>
+## Wave Shaders
 <div align="center">
-  <sub>by <a href="https://www.instagram.com/dale.hyamero/?hl=en">hyamero</a></sub>
+ <img src='https://user-images.githubusercontent.com/78056869/181474534-404a8b81-04f6-4031-84d4-9798239a1bf1.jpg' />
 </div>
+<br />
 
+## Clump Physics
+<div align="center">
+ <img src='https://user-images.githubusercontent.com/78056869/181474076-3e877bf8-e382-4544-92a1-f5516e2fd9d3.jpg' />
+</div>
 <br />
 
 ##
@@ -21,7 +26,5 @@
 - [`@react-three/fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; React renderer for Threejs on the web and react-native
 - [`@react-three/drei`](https://github.com/pmndrs/drei) &ndash; Useful helpers for react-three-fiber
 - [`@react-three/gltfjsx`](https://github.com/pmndrs/gltfjsx) &ndash; Turns GLTFs into JSX components
-- [`@react-three/gltfjsx`](https://github.com/pmndrs/react-postprocessing) &ndash;  Postprocessing wrapper for react-three-fiber
-- [`r3f-perf`](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances
-- [`zustand`](https://github.com/pmndrs/zustand) &ndash; State management
+- [`@react-three/postprocessing`](https://github.com/pmndrs/react-postprocessing) &ndash;  Postprocessing wrapper for react-three-fiber
 - [`react-spring`](https://react-spring.dev/) &ndash; Javascript animation
