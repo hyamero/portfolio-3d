@@ -55,7 +55,7 @@ const Socials: React.FC = () => {
         <FiArrowUpRight />
       </li>
       <li className=' hover:text-white'>
-        <a href='https://www.instagram.com/dale.hyamero/?hl=en'>INSTAGRAM</a>
+        <a href='https://www.instagram.com/hyamero/'>INSTAGRAM</a>
         <FiArrowUpRight />
       </li>
       <li className=' hover:text-white'>
