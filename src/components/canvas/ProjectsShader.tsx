@@ -34,7 +34,7 @@ const ProjectsShader: React.FC = () => {
       title: 'Tres',
       position: [-0.1, -3 + posY, -0.09],
       src: '/img/projects/hello.jpg',
-      url: 'https://chatti.vercel.app/direct/public',
+      url: 'https://chatti.vercel.app',
     },
 
     {
