@@ -27,7 +27,7 @@ const ProjectsShader: React.FC = () => {
       title: 'Dos',
       position: [0.1, -2 + posY, -0.09],
       src: '/img/projects/laptop.jpg',
-      url: 'https://collective-api.vercel.app/',
+      url: 'https://umamin.link/',
     },
 
     {
